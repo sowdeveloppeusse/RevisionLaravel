@@ -9,4 +9,6 @@ class Combat extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    public $timestamps = false;
+    protected $fillable = ['requester', 'user_requested', 'status'];
 }

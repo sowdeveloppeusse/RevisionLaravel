@@ -122,7 +122,7 @@ Route::get('/', function () {
     //             'nom_lutteur1' => 'yawou Diall',
     //             'nom_lutteur2' => 'Boy Niang',
     //             'nom_promoteur' => 'Bekaye Mbaye',
-    //             'etat' => 0,
+    //             'etat' => 1,
     //             'date' => date('y-m-d'),
     //         ],
     //     ],
@@ -165,14 +165,14 @@ Route::get('/', function () {
 
         // 👌👌👌 Modifier la date du 3em Combat 👌👌👌
             // $combats = Combat::where('id', '=', 3)
-            // ->update(['y-m-d']);
+            // ->update(['date' =>date('y-m-d') ]);
             // dd($combats);
 
         // 👌👌👌 Suppremier le 6em lutteur 👌👌👌
-            // $lutteur = lutteur::delete('id', '=', 6);
-            // dd($lutteur);
+            $lutteur = lutteur::where('id', '=', 6)->delete();
+            dd($lutteur);
 
-        // 👌👌👌 Recuperer l'etat et l'age du resultat dont l'id > à 3 👌👌👌
+        // 👌👌👌 Recuperer l'etat et l'age du lutteur dont l'id > à 3 👌👌👌
         // $lutteur = lutteur::where('id', '>', 3)
         //  ->get(['etat', 'age']);
         //  dd($lutteur);
